@@ -203,6 +203,14 @@ module.exports = function() {
       meplat: 0.83,
       bc: 0.333
     },
+    '7.92x57mm' : {
+      bulletDiameter:8.08,
+      bulletMass: 12.1,
+      bulletVelocity:800,
+      chargeMass: 3,
+      meplat: 1.34,
+      bc: 0.593
+    },
     '.300 Winchester Magnum' : {
       bulletDiameter: 7.8,
       bulletMass: 12,
