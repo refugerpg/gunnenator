@@ -1,0 +1,157 @@
+<div class="row">
+  <div class="page-header col-sm-12">
+    <h1>Documentation 0.1.0
+      <span class="pull-right">
+        <a ui-sref="index">
+          <small class="fa-stack fa-sm">
+            <i class="text-muted fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-home fa-stack-1x fa-inverse"></i>
+          </small>
+        </a>
+        <a ui-sref="docs">
+          <small class="fa-stack fa-sm">
+            <i class="text-muted fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+          </small>
+        </a>
+      </span>
+    </h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3">
+    <div style="height: 75%; overflow: scroll">
+      <div ng-repeat="item in docs">
+        <h4><a ng-href="{{baseURL}}#/docs/{{item.prefix}}/">{{item.name}}</a></h4>
+        <ul class="list-unstyled">
+          <li class="text-muted" ng-repeat="value in item.values"><a ng-href="{{baseURL}}#/docs/{{item.prefix}}/{{value.name}}/"><span ng-bind-html="item.prefix"></span>.<span ng-bind-html="value.name"></span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-9" ui-view>
+    <p class="lead">A couple forewarnings — first, if you use this as a source for an authoritative anything, you're stupid and I hate you.</p>
+    <p>This is purely for personal use for artistic purposes (books, games, rpgs, etc.), but I'd like to be as open about the calculations I used as possible. Second, when you attempt to create an objective number for something as wild and subjective as terminal ballistics, you're going to be biased in one way or another.</p>
+    <p>Old hunting metrics tend to favor big and heavy bullets, and you'll find that this one has a bias against blunt or slow-moving bullets, and a bias toward pointy and fast ones. The setting I made this calculator for is one where body armor is more or less a certainty, and terminal peformance is going to be affected accordingly.</p>
+    <p>Dice rolls are calculated by finding the minimum remainder after doing integer division of the damage by dice average — and returning an object with the damage value taken as an argument, a dice string (eg. 1d4, 5d8) and min, max and avg dice rolls.
+      <p>Naturally, if you have any contributions or improvements, make a pull request and I'll take a look at it.</p>
+  </div>
+  <!--<div class="col-sm-8">
+    <p>These are the stats for ammunition that are relevant to the calculations, and will have to be added for any new ammunition types.</p>
+    <dl class="dl-horizontal">
+      <dt>meplat (mm)</dt>
+      <dd>bullet point (diameter)</dd>
+      <dt>bulletMass (g)</dt>
+      <dd>mass of the bullet in grams, not grains</dd>
+      <dt>chargeMass (g)</dt>
+      <dd>mass of the powder charge in grams, not grains</dd>
+      <dt>diameter (mm)</dt>
+      <dd>diameter of the bullet</dd>
+      <dt>bulletVelocity (m/s)</dt>
+      <dd>fallback for guns without velocity data</dd>
+    </dl>
+    <p>These are the stats for weapons that are relevant to the calculations, and will have to be added for any new weapons.</p>
+    <dl class="dl-horizontal">
+      <dt>name</dt>
+      <dd>name of the weapon</dd>
+      <dt>cartridge</dt>
+      <dd>type of round fired (needs exact name from ammo dictionary)</dd>
+      <dt>velocity (m/s)</dt>
+      <dd>speed of the round as it exits the barrel</dd>
+      <dt>weightMin, weightMax</dt>
+      <dd>unloaded, loaded weight of the weapon in kilograms (averaged to find weight)</dd>
+      <dt>weight (kg)</dt>
+      <dd>fallback if min and maxes aren't available</dd>
+      <dt>length (mm)</dt>
+      <dd>length of the weapon, stock folded.</dd>
+      <dt>sr (mm)</dt>
+      <dd>sight radius — distance between rear sight and foresight</dd>
+      <dt>rof (rpm)</dt>
+      <dd>one minute divided by the time of the firing cycle for one round</dd>
+      <dt>cap</dt>
+      <dd>capacity of magazine (internal or external)</dd>
+    </dl>
+    <p>These are the derived stats from ammo and weapon info. They're calculated automatically.</p>
+    <dl class="dl-horizontal">
+      <dt>accuracy</dt>
+      <dd>max and min rounded, joined on a slash</dd>
+      <dt>accuracy_avg<sup>1</sup></dt>
+      <dd>(accuracy_max + accuracy_min) / 2</dd>
+      <dt>accuracy_base<sup>1</sup></dt>
+      <dd>ln(weight + 1) &times; -3</dd>
+      <dd>unaimed, "hip-fire" accuracy of a weapon, float</dd>
+      <dt>accuracy_damage_ratio<sup>1</sup></dt>
+      <dd>accuracy_average / glf</dd>
+      <dt>accuracy_max<sup>1</sup></dt>
+      <dd>(sightRadius <sup>.3</sup> &times; 1.25) + (weight / 5)) - 5</dd>
+      <dd>maximum aimed accuracy bonus, float</dd>
+      <dt>caliber</dt>
+      <dd>n/c</dd>
+      <dt>capacity</dt>
+      <dd>n/c</dd>
+      <dt>damage</dt>
+      <dd>dice string returned from damage dice calculator</dd>
+      <dt>damage_ap</dt>
+      <dd>rof &times; damage_max</dd>
+      <dt>damage_avg<sup>1</sup></dt>
+      <dd>average result from damage dice calculator</dd>
+      <dt>damage_max<sup>1</sup></dt>
+      <dd>maximum result from damage dice calculator</dd>
+      <dt>damage_min<sup>1</sup></dt>
+      <dd>minimum result from damage dice calculator</dd>
+      <dt>damage_spread_ratio<sup>1</sup></dt>
+      <dd>glf / spread</dd>
+      <dt>damage_raw<sup>1</sup></dt>
+      <dd>glf</dd>
+      <dt>draw</dt>
+      <dd>weight + (length/500)</dd>
+      <dd>draw time for a weapon, rounded, minimum 2</dd>
+      <dt>gf<sup>2</sup></dt>
+      <dd>(bulletMass<sup>1.5</sup> / diameter<sup>2</sup>) * velocity;</dd>
+      <dd>Gates factor, taken from some gun forum I stumbled upon years ago</dd>
+      <dt>glf<sup>2</sup></dt>
+      <dd>log<sub>2</sub>(gf &times; piercing_factor)<sup>3</sup> / 100</dd>
+      <dt>href</dt>
+      <dd>uri of the page for the item</dd>
+      <dt>image</dt>
+      <dd>uri of the item's image file</dd>
+      <dt>melee</dt>
+      <dd>drawTime &times; 0.75</dd>
+      <dd>speed for a melee attack, rounded, minimum 2</dd>
+      <dt>melee_damage</dt>
+      <dd>dice string returned from damage dice calculator (melee_damage_raw)</dd>
+      <dt>melee_damage_raw</dt>
+      <dd>ln(weight &times; 100)</dd>
+      <dt>name</dt>
+      <dd>n/c</dd>
+      <dt>piercing_factor<sup>1</sup></dt>
+      <dd>ln(velocity<sup>1.25</sup> &times; bulletMass &times; (bulletDiameter / (&pi; &times; meplat)));</dd>
+      <dt>recoilVelocity<sup>2</sup></dt>
+      <dd>((bulletMass &times; velocity) + (chargeMass &times; velocity)) / (weight &times; 1000)</dd>
+      <dt>rof</dt>
+      <dd>rof / 120</dd>
+      <dd>maximum number of rounds per AP</dd>
+      <dt>rof_raw<sup>1</sup></dt>
+      <dd>simply returns the cyclic rate of fire</dd>
+      <dt>spread</dt>
+      <dd>round(spread_raw)</dd>
+      <dd>recoil of a weapon, rounded, minimum of 1</dd>
+      <dt>spread_raw<sup>1</sup></dt>
+      <dd>recoilVelocity + 1</dd>
+      <dd>recoil of a weapon, minimum 1, float</dd>
+      <dt>type</dt>
+      <dd>type of weapon (e.g. assault rifle, pistol), taken from parent dictionary</dd>
+      <dt>velocity<sup>1</sup></dt>
+      <dd>muzzle velocity</dd>
+      <dt>weight</dt>
+      <dd>if provided with min/max values, averages the two; otherwise, uses the single value fallback.</dd>
+      <dt>weapon_length<sup>1</sup></dt>
+      <dd>converted to cm</dd>
+      <dt>weapon_sight_radius<sup>1</sup></dt>
+      <dd>converted to cm</dd>
+    </dl>
+    <p><small>1. only available from core.longStats()</small><br />
+    <small>2. unavailable in either core.stats() or core.longStats()</small></p>
+  -->
+  </div>
+</div>

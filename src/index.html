@@ -1,0 +1,22 @@
+<html ng-app="gunnerator">
+  <head>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/ui-grid.css"></link>
+    <link rel="stylesheet" type="text/css" href="/css/yeti.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css"></link>
+  </head>
+  <body>
+    <div ng-controller="switcher">
+      <div ng-if="engines.length > 1" dropdown class="btn-group switcher">
+        <button type="button" class="btn btn-primary" dropdown-toggle>
+          <i class="text muted fa fa-gear"></i> <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li ng-repeat="item in engines"><a ng-click="switch(item.name)">{{item.name}} <i ng-class="isSelected(item.name) ? 'fa-check text-success' : ''" class="pull-right fa"></i> </a></li>
+        </ul>
+      </div>
+    </div>
+    <div ui-view class="container"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>

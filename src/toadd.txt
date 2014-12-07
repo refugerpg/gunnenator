@@ -1,0 +1,90 @@
+PASSED
+Stg. 44 - proprietary round
+CBJ-MS - proprietary round
+MSMC - proprietary round
+
+
+Pistols
+  MP412
+  QSZ-92
+  FN57
+  Unica 6
+  Taurus Raging Bull
+  CZ-52
+  Chiappa Rhino
+  Fort-12
+  GP-100
+  Gsh18
+  H&K HK45C
+  H&K USP Compact
+  Mateba Unica
+  OTs-33
+  S&W M469
+  Taurus Model 44
+  TT-33
+
+Shotguns
+  W1200
+  M1014
+  SPAS-12
+  AA-12
+  Striker
+  Ranger
+  Model 1887
+  Saiga-12
+  KSG
+  M1216
+  QBS-09
+  UTS-15
+  DBV-12
+
+Assault rifles
+  Vepr
+  SAR-21
+  XM8 - get proper sight radius measurement
+
+Carbines
+  XM8 PDW
+
+LMGS
+  XM8 LSW
+
+MMGS
+  M240
+  Pecheneg
+  Type 67
+  AA 7.62
+  Mk. 48
+  PKM
+  Bren L4
+  L7A2
+
+Sniper rifles
+  FN SCAR SSR
+  VKS
+  Lynx
+  L115
+  USR
+  M21
+  R700
+  Intervention
+  RSASS
+  AS-50
+  L118A
+  MSR
+  FN Ballista
+  CS-LR4
+  M40A5
+  Scout Elite
+  SV-98
+  JNG-90
+  .338-Recon
+  M98B
+  SRR-61
+  FY-JS
+  GOL Magnum
+  SR338
+  CS5
+  Barrett M82
+  Barrett M99
+  DSR-50

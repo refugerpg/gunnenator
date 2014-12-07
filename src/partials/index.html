@@ -1,0 +1,36 @@
+<div ng-controller="index">
+  <div class="row">
+    <div class="page-header col-sm-12">
+      <h1>The Gunnenator <small>0.1.0</small>
+        <span class="pull-right">
+          <a ui-sref="index">
+            <small class="fa-stack fa-sm">
+              <i class="text-muted fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-home fa-stack-1x fa-inverse"></i>
+            </small>
+          </a>
+          <a ui-sref="docs">
+            <small class="fa-stack fa-sm">
+              <i class="text-muted fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+            </small>
+          </a>
+        </span>
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <form class="form-inline">
+        <tabset>
+          <tab ng-click="select($index)" ng-repeat="item in weapons" heading="{{item.name}}"></tab>
+        </tabset>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div id="outputGrid" ui-grid="{data : tableData, columnDefs : cdefs}" class="myGrid"></div>
+    </div>
+  </div>
+</div>

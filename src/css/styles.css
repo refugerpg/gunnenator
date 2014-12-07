@@ -1,0 +1,73 @@
+@font-face { font-family: 'Linux Libertine'; font-style: normal; font-weight: 400; src: local('Linux Libertine'),url(//brick.a.ssl.fastly.net/fonts/linuxlibertine/400.woff) format('woff'); }
+
+.fa-wikipedia:before { font-family: 'Linux Libertine', 'Times New Roman', Times, serif; font-weight: 400; content: "W"; }
+
+accordion .panel-heading {
+  cursor:pointer;
+}
+.container {
+  width:1280px;
+}
+#outputGrid {
+  width:100%;
+  height:600px;
+}
+.ui-grid-header-cell{
+  height:27px;
+  max-height:27px;
+}
+.ui-grid-cell:not(.first) {
+  text-align:center;
+}
+.ui-grid-cell.first:hover, .collapse-link:hover {
+  cursor:pointer;
+  text-decoration:underline;
+}
+.stat-title {
+  text-transform:capitalize;
+}
+#stats {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+}
+.crop-thumbnail {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+}
+.crop-thumbnail img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  transform: translate(-50%,-50%);
+}
+.crop-thumbnail img.portrait {
+  width: 100%;
+  height: auto;
+}
+.img-block {
+  width:100%;
+  height:420px;
+  display:table;
+}
+img.centered {
+  margin:0 auto;
+}
+.img-block .img-vertical-align {
+  display:table-cell;
+  vertical-align:middle;
+}
+.switcher {
+  position:fixed;
+  top:0px;
+  right:1em;
+  font-size: 18px;
+}
+.switcher .dropdown-menu {
+  right:0;
+  left:initial;
+}

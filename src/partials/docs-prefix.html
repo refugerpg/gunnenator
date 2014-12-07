@@ -1,0 +1,6 @@
+<h1>{{item.name}} <small ng-if="item.type">{{item.type}}</small></h1>
+<p class="lead" ng-bind-html="item.description"></p>
+<hr />
+<ul>
+  <li ng-repeat="value in item.values"><a ng-href="{{baseURL}}#/docs/{{item.prefix}}/{{value.name}}/">{{item.prefix}}.{{value.name}}</a></li>
+</ul>

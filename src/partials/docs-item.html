@@ -1,0 +1,12 @@
+<h1>{{prefix}}.{{item.name}} <small>{{item.type}}<span ng-if="item.unit">,</span> {{item.unit}}</small></h1>
+<p class="lead" ng-bind-html="item.description"></p>
+<hr />
+<div ng-if="item.formula">
+  <h3>Calculation</h3>
+  <p>{{item.name}} = <span ng-bind-html="item.formula"></span></p>
+</div>
+<div ng-if="item.shortStats && item.longStats">
+  <h3>Availability</h3>
+  <p ng-bind-html="shortStats"></p>
+  <p ng-bind-html="longStats"></p>
+</div>
