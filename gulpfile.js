@@ -63,8 +63,7 @@ gulp.task('json', function() {
  * This task collates and minifies js and runs sass.
  */
 
-gulp.task('dist', ['json','partials'], function() {
-  gulp.src('./src/css/*.css').pipe(gulp.dest('dist/styles/'));
+gulp.task('dist', ['json','partials','css'], function() {
   gulp.src('./src/img/**/*', {base: './src/img'})
     .pipe(gulp.dest('./dist/img/'));
   console.log('Building and minifying the gunnerator');

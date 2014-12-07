@@ -28,13 +28,11 @@ module.exports = function($rootScope, $scope, $stateParams, $http, core, config)
   });
 
   $scope.select = function(key) {
-    $scope.selected = key;
+    for (var i=0; i < $scope.weapons.length; i++) {
+      $scope.weapons[i].tabActive = (i == key) ? true : false;
+    }
     $scope.generateTableData(key);
     localStorage.gunnenatorGrid = key;
-  };
-
-  $scope.isSelected = function(key) {
-    return $scope.selected == key;
   };
 
   $rootScope.$on('switchEngine', function(e) {
