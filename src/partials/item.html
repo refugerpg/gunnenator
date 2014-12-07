@@ -2,7 +2,7 @@
   <div class="page-header col-sm-12">
     <h1>{{ selected.info.name }}
       <small>
-        {{selected.info.country}} {{ selected.info.cartridge }} {{ selected.info.type.toLowerCase() }}&nbsp;
+        {{selected.info.country}} {{ selected.info.cartridge }} {{ selected.info.type.toLowerCase() }} <span ng-if="selected.info.year">({{ selected.info.year}})</span> &nbsp;
         <span ng-if="variants" class="dropdown">
           <a href class="text-muted" dropdown-toggle>
             <i class="fa fa-caret-down"></i>

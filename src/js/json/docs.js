@@ -6,28 +6,34 @@ module.exports = function() {
       "values" : [
         { "name" : "meplat",
           "description" : "The meplat is the flat or open tip on the nose of a bullet.",
-          "type" : "float",
+          "type" : "number",
           "unit" : "mm"
         },
         { "name" : "bulletMass",
           "description" : "The mass of the bullet.",
-          "type" : "float",
+          "type" : "number",
           "unit" : "g"
         },
         { "name" : "chargeMass",
           "description" : "The mass of the powder charge.",
-          "type" : "float",
+          "type" : "number",
           "unit" : "g"
         },
         { "name" : "bulletDiameter",
           "description" : "Diameter of the bullet.",
-          "type" : "float",
+          "type" : "number",
           "unit" : "mm"
         },
         { "name" : "bulletVelocity",
           "description" : "Velocity of average specimen under average firing conditions and fallback for weapons without available velocity data.",
-          "type" : "int",
+          "type" : "number",
           "unit" : "m/s"
+        },
+        {
+          "name" : "multiplier",
+          "description" : "Number of projectiles with the round. Used to calculate shotgun damage.",
+          "type" : "number",
+          "unit" : "n/a"
         }
       ]
     },
@@ -44,7 +50,7 @@ module.exports = function() {
           "type" : "key"
         },
         { "name" : "velocity",
-          "description" : "Muzzle velocity — speed of the bullet as it exits the barrel. This is used to calculate damage and spread (via recoil relocity).",
+          "description" : "Muzzle velocity — speed of the bullet as it exits the barrel. This is used to calculate damage and spread (via recoil relocity). If unknown, will default to the velocity of the ammunition fired.",
           "type" : "int",
           "unit" : "m/s"
         },
@@ -101,6 +107,11 @@ module.exports = function() {
           "name" : "country",
           "description" : "Two-letter country code for country of production.",
           "type" : "string"
+        },
+        {
+          "name" : "year",
+          "description" : "Year of first production.",
+          "type" : "number"
         }
       ]
     },

@@ -41,7 +41,6 @@ gunnenator.factory('core', require('./core/core'))
 .controller('switcher', require("./core/switcher"))
 .controller('index', require('./index/index'))
 .controller('item', require('./item/item'))
-.controller('type', require('./item/type'))
 .controller('docs', require('./docs/docs'))
 .controller('docsItem', require('./docs/docs-item'))
 .filter('docsFilter', require('./docs/docs-filter'))
@@ -95,10 +94,5 @@ gunnenator.factory('core', require('./core/core'))
       url: "/{weaponType}/{weaponName}/",
       templateUrl: "partials/item.html",
       controller: 'item'
-    })
-    .state('type', {
-      url: "/{weaponType}/",
-      templateUrl: "partials/type.html",
-      controller : 'type'
     });
   });

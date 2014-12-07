@@ -15,7 +15,8 @@ module.exports = function() {
           "img" : input.img,
           "wiki" : input.wiki,
           "flag" : input.flag,
-          "country" : input.nationality
+          "country" : input.nationality,
+          "year" : input.year
         },
         "stats" : [
         {
@@ -94,6 +95,7 @@ module.exports = function() {
     { field: 'type', enableColumnMenu: false},
     { field: 'cartridge', enableColumnMenu: false},
     { field: 'flag', enableColumnMenu: false, maxWidth: 48, cellTemplate: '<div class="ui-grid-cell-contents" ng-class="col.colIndex()"><span ng-cell-text><img ng-src="{{row.entity.flag}}"></img></span></div>'},
+    { field: 'year', maxWidth: 48, enableColumnMenu: false},
     { field: 'draw' , maxWidth: 48, enableColumnMenu: false},
     { field: 'melee', displayName: "Melee", maxWidth:72, enableColumnMenu: false},
     { field: 'accuracy', enableColumnMenu: false},
@@ -138,6 +140,10 @@ module.exports = function() {
   };
 
   var calculate = function(weapon, cartridge, options) {
+
+      if (cartridge === undefined) {
+        new Error(weapon.name," cartridge is undefined.");
+      }
 
       var out = {};
       var weight;
@@ -184,6 +190,7 @@ module.exports = function() {
       out.flag = weapon.flag;
       out.country = weapon.country;
       out.nationality = weapon.nationality;
+      out.year = weapon.year;
 
       if (options.format == "long") {
         out.alias = weapon.alias;
@@ -217,6 +224,9 @@ module.exports = function() {
       if (options.similar) {
         var comparisonArray = [weight, velocity, pf, spread, base, max, weapon.rof, weapon.length, weapon.sr, weapon.cap, glf];
         for (var a=0; a < comparisonArray.length; a++) {
+          if (comparisonArray[a] === undefined) {
+            new Error(weapon.name," parameter is undefined.");
+          }
           comparisonArray[a] = parseFloat(comparisonArray[a].toFixed(2));
         }
         out.similar = comparisonArray;

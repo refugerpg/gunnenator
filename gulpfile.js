@@ -1,6 +1,5 @@
 var gulp = require('gulp'),
   browserify = require('browserify'),
-  sass = require('gulp-sass'),
   uglify = require('gulp-uglify'),
   source = require('vinyl-source-stream'),
   buffer = require('vinyl-buffer');

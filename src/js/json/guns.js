@@ -1,3 +1,98 @@
+/*
+
+PASSED
+CBJ-MS - proprietary round
+MSMC - proprietary round
+
+
+Pistols
+MP412
+QSZ-92
+FN57
+Unica 6
+Taurus Raging Bull
+CZ-52
+Chiappa Rhino
+Fort-12
+GP-100
+Gsh18
+H&K HK45C
+H&K USP Compact
+Mateba Unica
+OTs-33
+S&W M469
+Taurus Model 44
+TT-33
+
+Shotguns
+W1200
+M1014
+SPAS-12
+AA-12
+Striker
+Ranger
+Model 1887
+Saiga-12
+KSG
+M1216
+QBS-09
+UTS-15
+DBV-12
+
+Assault rifles
+Vepr
+SAR-21
+XM8 - get proper sight radius measurement
+
+Carbines
+XM8 PDW
+
+LMGS
+XM8 LSW
+
+MMGS
+M240
+Pecheneg
+Type 67
+AA 7.62
+Mk. 48
+PKM
+Bren L4
+L7A2
+
+Sniper rifles
+FN SCAR SSR
+VKS
+Lynx
+L115
+USR
+M21
+R700
+Intervention
+RSASS
+AS-50
+L118A
+MSR
+FN Ballista
+CS-LR4
+M40A5
+Scout Elite
+SV-98
+JNG-90
+.338-Recon
+M98B
+SRR-61
+FY-JS
+GOL Magnum
+SR338
+CS5
+Barrett M82
+Barrett M99
+DSR-50
+
+
+*/
+
 var wl = {
   "pistols" : {
     weapons : [
@@ -50,29 +145,14 @@ var wl = {
     {name: "Falcon 400", cartridge: [".32 ACP",".380 ACP"], cap: 8, country: "es"},
     {name: "FEG Model P9R", cartridge: "9x19mm", cap: 14, country: "hu"},
     {name: "FN Forty-Nine", cartridge: ["9x19mm",".40 S&W"], cap: 10, country: "be"},
-    {name: "Glock 17", cartridge: "9x19mm", cap: 17, country: "at"},
-    {name: "Glock 17C", cartridge: "9x19mm", cap: 17, country: "at"},
-    {name: "Glock 17L", cartridge: "9x19mm", cap: 17, country: "at"},
-    {name: "Glock 18C", cartridge: "9x19mm", cap: 25, country: "at"},
-    {name: "Glock 19", cartridge: "9x19mm", cap: 15, country: "at"},
-    {name: "Glock 19C", cartridge: "9x19mm", cap: 15, country: "at"},
-    {name: "Glock 20", cartridge: "10mm Auto", cap: 15, country: "at"},
-    {name: "Glock 21", cartridge: ".45 ACP", cap: 13, country: "at"},
-    {name: "Glock 22", cartridge: ".40 S&W", cap: 15, country: "at"},
-    {name: "Glock 23", cartridge: ".40 S&W", cap: 15, country: "at"},
-    {name: "Glock 24", cartridge: ".40 S&W", cap: 15, country: "at"},
-    {name: "Glock 25", cartridge: ".380 ACP", cap: 15, country: "at"},
-    {name: "Glock 26", cartridge: "9x19mm", cap: 10, country: "at"},
-    {name: "Glock 27", cartridge: ".40 S&W", cap: 9, country: "at"},
-    {name: "Glock 28", cartridge: ".380 ACP", cap: 10, country: "at"},
-    {name: "Glock 29", cartridge: "10mm Auto", cap: 10, country: "at"},
-    {name: "Glock 30", cartridge: "9x19mm", cap: 10, country: "at"},
-    {name: "Glock 31", cartridge: ".357 SIG", cap: 15, country: "at"},
-    {name: "Glock 32", cartridge: ".357 SIG", cap: 9, country: "at"},
-    {name: "Glock 33", cartridge: ".357 SIG", cap: 13, country: "at"},
-    {name: "Glock 34", cartridge: "9x19mm", cap: 17, country: "at"},
-    {name: "Glock 35", cartridge: ".40 S&W", cap: 15, country: "at"},
-    {name: "Glock 36", cartridge: ".45 ACP", cap: 6, country: "at"},
+    {
+      name: "Glock",
+      alias: ["Glock 17","Glock 17C","Glock 17L",
+        "Clock 18C","Glock 19","Glock 19C","Glock 20","Glock 21","Glock 22","Glock 23","Glock 24","Glock 25","Glock 26","Glock 27","Glock 28","Glock 29","Glock 30","Glock 31","Glock 32","Glock 33","Glock 34","Glock 35","Glock 36"],
+      cartridge: ["9x19mm","9x19mm","9x19mm","9x19mm","9x19mm","9x19mm","10mm Auto",".45 ACP",".40 S&W",".40 S&W",".40 S&W",".380 ACP","9x19mm",".40 S&W",".380 ACP","10mm Auto","9x19mm",".357 SIG",".357 SIG",".357 SIG","9x19mm",".40 S&W",".45 ACP"],
+      cap: [17,17,17,25,15,15,15,13,15,15,15,15,10,9,10,10,10,15,9,13,17,15,6],
+      country: "at"
+    },
     {name: "H&K HK4", cartridge: [".380 ACP", ".32 ACP", ".25 ACP", ".22 LR"], cap: 6, country: "de"},
     {name: "H&K Mk 23 SOCOM", cartridge: ".45 ACP", cap: 12, country: "de"},
     {name: "H&K P7 M8", cartridge: "9x19mm", cap: 8, country: "de"},
@@ -148,32 +228,15 @@ var wl = {
   },
   "smgs" : {
     weapons : [
-    {name: "A-9", cartridge: "9x19mm",cap:30,country:"ru"},
-    {name: "A-7.62", cartridge: "7.62x25mm",cap:30, country:"ru"},
-    {name: "AEK-919", cartridge: "9x18mm", cap: 30, country: "ru"},
-    {name: "AEK-919K", cartridge: "9x18mm", cap: 30, country: "ru"},
-    {name: "Agram 2000", cartridge: "9x19mm", cap:32, country: "cr"},
-    {name: "Arsenal Shipka", cartridge: ["9x18mm","9x19mm"], cap: [32,25], country: "bg"},
-    //{name: "Benelli CB-M2", cartridge: "9x19mm", cap:30, country: "it"},
-    {name: "Carl Gustav M45",cartridge:"9x19mm", cap:36, country: "se"},
-    {name: "Cobray M-11", cartridge:"9x19mm", cap: 10, country: "us"},
-    {name: "Colt Model 635", cartridge:"9x19mm", cap:30, country: "us"},
-    {name: "LaFrance M16K", cartridge:".45 ACP", cap:30, country:"us"},
-    {name: "CZ-23", cartridge:"9x19mm", cap: 40, country: "cz"},
-    {name: "CZ-24", cartridge:"7.62x25mm", cap: 32, country: "cz"},
-    {name: "F1A1", cartridge: "9x19mm",cap:32, country:"au"},
-    {name: "SAF", cartridge: "9x19mm", cap:30, country:"cl"},
-    {name: "SAF Silencada", cartridge:"9x19mm", cap:30, country: "cl"},
-    {name: "Mini-SAF", cartridge:"9x19mm", cap:20, country: "cl"},
-    {name: "Floro MK-9", cartridge:"9x19mm", cap:32, country: "ph"},
-    {name: "FMK-3 Mod 2", cartridge: "9x19mm", cap:40, country: "ar"},
-    {name: "Franchi LF-57", cartridge:"9x19mm", cap:40, country: "it"},
-    {name: "Gepard", cartridge:["9x19mm","9x18mm"], cap: 40, country: "ru"},
-    {name: "GG-95", cartridge:"9x19mm", cap: 20, country: "fi"},
-    {name: "MP5 Navy", cartridge:"9x19mm", cap: 30, country: "de"},
-    {name: "Intratec TEC-9", cartridge:"9x19mm", cap: 20, country: "us"},
-    {name: "Lusa A2", cartridge:"9x19mm", cap: 30, country: "us"},
-    {name: "Madsen M53", cartridge:"9x19mm", cap: 32, country: "dk"},
+    {name: "A-9", cartridge: "9x19mm",cap:30,country:"ru"}, // can't find documentation
+    {name: "A-7.62", cartridge: "7.62x25mm",cap:30, country:"ru"}, // ditto
+    {name: "Benelli CB-M2", cartridge: "9x19mm", cap:30, country: "it"}, // proprietary round
+    {name: "Cobray M-11", cartridge:"9x19mm", cap: 10, country: "us"}, // minor variant
+    {name: "Colt Model 635", cartridge:"9x19mm", cap:30, country: "us"}, // can't find stats
+    {name: "Mini-SAF", cartridge:"9x19mm", cap:20, country: "cl"}, // can't find stats
+    {name: "Gepard", cartridge:["9x19mm","9x18mm"], cap: 40, country: "ru"}, // weird 9x30mm round
+    {name: "GG-95", cartridge:"9x19mm", cap: 20, country: "fi"}, // same as Jatimatic
+    {name: "MP5 Navy", cartridge:"9x19mm", cap: 30, country: "de"}, // minor variant
     {name: "Mekanika Uru", cartridge:"9x19mm", cap: 30, country: "br"},
     {name: "Mekanika Uru Carbine", cartridge: "9x19mm", cap: 30, country: "br"},
     {name: "Mendoza HM-3", cartridge: "9x19mm", cap: 32, country: "mx"},
@@ -256,7 +319,6 @@ var wl = {
     {name: "S&W Model 3000", cartridge:"12 gauge", cap:6, country: "us"},
     {name: "Techno Arms MAG-7", cartridge:"12 gauge",cap:5, country:"za"},
     {name: "Viking Arms SOS", cartridge:"12 gauge", cap:7, country:"gb"},
-
     {name: "Kel-Tec KSG", cartridge:"12 gauge", cap: 14, country:"us", length: 663, weightMin: 3.13, weightMax: 3.86}
     ]
   },
@@ -343,49 +405,42 @@ module.exports = function() {
       name: "Pistol",
       weapons: [
       //{name: "AMT Backup", cartridge: [".45 ACP","9x19mm",".38 Special"], rof: 40, weight: 0.51, length: 13, sr: 12, cap: [5,6,5], country: "us"},
-      {name: "AMT Longslide Hardballer", cartridge: ".45 ACP", rof: 40, velocity: 305, weight: 1.306, length: 26.7, sr: 23, cap: 7, country: "us"},
-      {name: "APS Stechkin", cartridge: "9x18mm", rof: 750, sr: 19, length: 22.5, weight: 1.22, velocity: 340, cap: 20, country: "ru"},
-      {name: "Astra A-100", alias: ["9x19mm",".45 ACP",".40 S&W"], cartridge: ["9x19mm",".45 ACP",".40 S&W"], rof: 40, sr: 15, length: 19, weight: 0.96, cap: [17,9,10], country: "es"},
-      {name: "Benelli B76", cartridge: "9x19mm", rof: 40, cap: 8, weight: 0.97, length: 20.5, sr: 13.5, country: "it"},
-      {name: "Beretta 93R", cartridge: "9x19mm", rof: 750, velocity: 375, weightMin: 1.160, weightMax: 1.556, length: 240, sr: 160, cap: 15, wiki: "Beretta_93R", country: "it", description: "The Beretta 93R is a selective fire machine pistol, designed and manufactured by Italian firearms manufacturer Beretta in the 1970s for police and military use, that is derived from their semi-automatic Beretta 92. The 'R' stands for Raffica, which is Italian for 'volley', 'flurry' or 'burst'. (Wikipedia)"},
-      {name: "Beretta M1951", cartridge: "9x19mm", rof: 32, velocity: 350, weightMin: 0.813, weightMax: 0.966, length: 203, sr: 140, cap: 8, country: "it"},
-      {name: "Beretta M92SB, M92SB-C", cap: 15, cartridge: "9x19mm", rof: 45, velocity: 390, weightMin: 0.872, weightMax: 1.158, length: 217, sr: 155, cost: 650, country: "it"},
-      {name: "Beretta Model 81", cap: 12, cartridge: ".32 ACP", rof: 36, velocity: 300, weightMin: 0.616, weightMax: 0.765, length: 172, sr: 124, cost: 500, country: "it"},
-      {name: "Beretta Model 84", cap: 13, cartridge: ".380 ACP", rof: 36, velocity: 280, weightMin: 0.606, weightMax: 0.786, length: 172, sr: 124, cost: 500, country: "it"},
-      {name: "Beretta Model 92F, Model 92F-C", cap: 15, cartridge: "9x19mm", rof: 45, velocity: 390, weightMin: 0.859, weightMax: 1.145, length: 217, sr: 155, cost: 700, country: "it"},
-      {name: "Browning Hi-Power", cartridge: "9x19mm", velocity: 350, weightMin: 0.810, weightMax: 0.986, rof: 40, length: 200, sr: 159, cap: 13, country: "us", wiki:"Browning_Hi-Power"},
-      {name: 'Colt Python', alias: ['6" barrel','2.5" barrel','4" barrel','8" barrel'], cartridge: ".357 Magnum", cap: 6, rof: 40, length: [245,236,240,250], sr: [169,129,149,178], weight: [1.3,1.1,1.2,1.4], velocity: [519,336,460,573], country: "us"},
-      {name: "CZ-75, CZ-85", cartridge: "9x19mm", velocity: 369, weightMin: 0.98, weightMax: 1.180, rof: 40, length: 203, sr: 160, cap: 15, country: "cz"},
-      {name: "Detonics Combat Master", cartridge: ".45 ACP", rof: 30, cap: 7, velocity: 237, weightMin: 0.820, weightMax: 1.010, length: 171, sr: 101, cost: 700, country: "us"},
-      {name: "FN BDA-9C", cartridge: "9x19mm", velocity: 350, weightMin: 0.708, weightMax: 0.847, rof: 40, length: 173, sr: 152, cap: 7, wiki: "Browning_BDA", country: "be"},
-      {name: "FN BDA-9S", cartridge: "9x19mm", velocity: 356, weightMin: 0.850, weightMax: 1.088, rof: 40, length: 200, sr: 176, cap: 14, wiki: "Browning_BDA", country: "be"},
-      {name: "FN Five-seveN", cartridge: "5.7x28mm", velocity: 650, length: 208, sr: 178, weight: 0.62, rof: 40, cap: 20, country: "be"},
-      {name: "FN FNP", alias: ["FN FP-9","FN FP-9M","FN FNP-40","FN FNP-45"], cartridge: ["9x19mm","9x19mm",".40 S&W",".45 ACP"], weight: [0.7,0.703,0.757,0.919], rof: 40, length: [188,179,188,199], cap: [16,15,14,15], sr: [160,150,160,170], country: "be"},
+      {name: "AMT Longslide Hardballer", cartridge: ".45 ACP", rof: 40, velocity: 305, weight: 1.306, length: 26.7, sr: 23, cap: 7, country: "us", year: 1980},
+      {name: "APS Stechkin", cartridge: "9x18mm", rof: 750, sr: 19, length: 22.5, weight: 1.22, velocity: 340, cap: 20, country: "ru", year: 1951},
+      {name: "Astra A-100", alias: ["9x19mm",".45 ACP",".40 S&W"], cartridge: ["9x19mm",".45 ACP",".40 S&W"], rof: 40, sr: 15, length: 19, weight: 0.96, cap: [17,9,10], country: "es", year:1990},
+      {name: "Benelli B76", cartridge: "9x19mm", rof: 40, cap: 8, weight: 0.97, length: 20.5, sr: 13.5, country: "it", year:1976},
+      {name: "Beretta 93R", cartridge: "9x19mm", rof: 750, velocity: 375, weightMin: 1.160, weightMax: 1.556, length: 240, sr: 160, cap: 15, wiki: "Beretta_93R", country: "it", description: "The Beretta 93R is a selective fire machine pistol, designed and manufactured by Italian firearms manufacturer Beretta in the 1970s for police and military use, that is derived from their semi-automatic Beretta 92. The 'R' stands for Raffica, which is Italian for 'volley', 'flurry' or 'burst'. (Wikipedia)", year:1979},
+      {name: "Beretta M1951", cartridge: "9x19mm", rof: 32, velocity: 350, weightMin: 0.813, weightMax: 0.966, length: 203, sr: 140, cap: 8, country: "it", year:1949},
+      {name: "Beretta M92SB, M92SB-C", cap: 15, cartridge: "9x19mm", rof: 45, velocity: 390, weightMin: 0.872, weightMax: 1.158, length: 217, sr: 155, cost: 650, country: "it", year: 1972},
+      {name: "Beretta Model 81", cap: 12, cartridge: ".32 ACP", rof: 36, velocity: 300, weightMin: 0.616, weightMax: 0.765, length: 172, sr: 124, cost: 500, country: "it", year: 1976},
+      {name: "Beretta Model 84", cap: 13, cartridge: ".380 ACP", rof: 36, velocity: 280, weightMin: 0.606, weightMax: 0.786, length: 172, sr: 124, cost: 500, country: "it", year:1976},
+      {name: "Beretta Model 92F, Model 92F-C", cap: 15, cartridge: "9x19mm", rof: 45, velocity: 390, weightMin: 0.859, weightMax: 1.145, length: 217, sr: 155, cost: 700, country: "it",year:1985},
+      {name: "Browning Hi-Power", cartridge: "9x19mm", velocity: 350, weightMin: 0.810, weightMax: 0.986, rof: 40, length: 200, sr: 159, cap: 13, country: "us", wiki:"Browning_Hi-Power", year:1935},
+      {name: 'Colt Python', alias: ['6" barrel','2.5" barrel','4" barrel','8" barrel'], cartridge: ".357 Magnum", cap: 6, rof: 40, length: [245,236,240,250], sr: [169,129,149,178], weight: [1.3,1.1,1.2,1.4], velocity: [519,336,460,573], country: "us", year:1955},
+      {name: "CZ-75, CZ-85", cartridge: "9x19mm", velocity: 369, weightMin: 0.98, weightMax: 1.180, rof: 40, length: 203, sr: 160, cap: 15, country: "cz", year:1975},
+      {name: "Detonics Combat Master", cartridge: ".45 ACP", rof: 30, cap: 7, velocity: 237, weightMin: 0.820, weightMax: 1.010, length: 171, sr: 101, cost: 700, country: "us", year:1975},
+      {name: "FN BDA", alias:["FN BDA-9C","FN BDA-9S"], cartridge: "9x19mm", velocity: [350,356], weightMin: [0.708,0.850], weightMax: [0.847,1.088], rof: 40, length: [173,200], sr: [152,176], cap: [7,14], wiki: "Browning_BDA", country: "be", year: 1983},
+      {name: "FN Five-seveN", cartridge: "5.7x28mm", velocity: 650, length: 208, sr: 178, weight: 0.62, rof: 40, cap: 20, country: "be", year:1998},
+      {name: "FN FNP", alias: ["FN FP-9","FN FP-9M","FN FNP-40","FN FNP-45"], cartridge: ["9x19mm","9x19mm",".40 S&W",".45 ACP"], weight: [0.7,0.703,0.757,0.919], rof: 40, length: [188,179,188,199], cap: [16,15,14,15], sr: [160,150,160,170], country: "be", year:2006},
       /*{name: "FN FNP-9M", cartridge: "9x19mm", weight: 0.703, rof: 40, length: 179, cap: 15, sr: 150, barrel: 3.791, country: "be"},
       {name: "FN FNP-40", cartridge: ".40 S&W", weight: 0.757, rof: 40, length: 188, cap: 14, sr: 160, barrel: 4, country: "be"},
       {name: "FN FNP-45", cartridge: ".45 ACP", weight: 0.919, rof: 40, length: 199, cap: 15, sr: 170, barrel: 4.5, country: "be"},
       {name: "FN FNP-357", cartridge: ".357 SIG", weight: 0.7, rof: 40, length: 188, cap: 15, sr: 160, barrel: 4}, need ammo data*/
-      {name: "Glock 17", cartridge: "9x19mm", velocity: 350, weightMin: 0.620, weightMax: 0.865, rof: 40, length: 188, sr: 165, cap: 17, country: "at", wiki: "Glock"},
-      {name: "Glock 18", cartridge: "9x19mm",rof: 1200, length: 186, sr: 138, velocity: 375, weight: 0.625, cap: 33, country: "at", wiki: "Glock"},
-      {name: "H&K P7K3", cartridge: ".32 ACP", rof: 24, velocity: 291, cap: 8, weightMin: 0.748, weightMax: 0.850, length: 160, sr: 139, cost: 600, country: "de"},
-      {name: "H&K P7M13", cartridge: "9x19mm", rof: 39, velocity: 351, cap: 13, weightMin: 0.850, weightMax: 1.131, length: 175, sr: 148, cost: 1100, country: "de"},
-      {name: "H&K P7M8", cartridge: "9x19mm", rof: 24, velocity: 351, cap: 8, weightMin: 0.794, weightMax: 0.959, length: 171, sr: 148, cost: 900, country: "de"},
-      {name: "H&K P7PT8", cartridge: "9x19mm", rof: 24, velocity: 400, cap: 8, weightMin: 0.720, weightMax: 0.818, length: 170, sr: 148, cost: 900, country: "de"},
-      {name: "H&K P9S", cartridge: "9x19mm", rof: 27, velocity: 350, cap: 9, weightMin: 0.848, weightMax: 1.030, length: 192, sr: 147, cost: 1100, country: "de"},
-      {name: "H&K USP Compact (.45 ACP)", cartridge: ".45 ACP", rof: 40, length: 180, sr: 148, weight: 0.725, cap: 8, country: "de"},
-      {name: "H&K USP Tactical (.45 ACP)", cartridge: ".45 ACP", rof: 40, weight: 0.861, length: 219, sr: 183, cap: 8, country: "de"},
-      {name: "H&K VP70M, VP70Z", cartridge: "9x19mm", rof: 360, velocity: 360, cap: 18, weightMin: 0.816, weightMax: 1.131, length: 203, sr: 175, country: "de"},
-      {name: "IMI Desert Eagle", alias: [".50 Action Express", ".44 Magnum"], cartridge: [".50 Action Express",".44 Magnum"], length: 273, sr: 219, rof: [24,27], velocity: [443,376], weightMin: [1.780,1.653], weightMax: [2.091,1.913], cap: [8,9], cost: [700,600], country :"il"},
-      {name: "Colt M1911", cartridge: ".45 ACP", rof: 35, velocity: 252, cap: 7, weightMin: 1.049, weightMax: 1.271, length: 219, sr: 165, cost: 400, country: "us"},
+      {name: "H&K P7", alias:["H&K P7K3","H&K P7M13","H&K P7M8","H&K P7PT8"], cartridge: [".32 ACP","9x19mm","9x19mm","9x19mm"], rof: [24,39,24,24], velocity: [291,351,351,400], cap: [8,13,8,8], weightMin: [0.748,0.850,0.794,0.720], weightMax: [0.850,1.131,0.959,0.818], length: [160,175,171,170], sr: [139,148,148,148], cost: [600,1100,900,900], country: "de", year: 1976},
+      {name: "H&K P9S", cartridge: "9x19mm", rof: 27, velocity: 350, cap: 9, weightMin: 0.848, weightMax: 1.030, length: 192, sr: 147, cost: 1100, country: "de", year:1969},
+      {name: "H&K USP", alias: ["USP Compact","USP Tactical"], cartridge: ".45 ACP", rof: 40, length: [180,219], sr: [148,183], weight: [0.725,0.861], cap: 8, country: "de", year:1993},
+      {name: "H&K VP70M, VP70Z", cartridge: "9x19mm", rof: 360, velocity: 360, cap: 18, weightMin: 0.816, weightMax: 1.131, length: 203, sr: 175, country: "de", year:1970},
+      {name: "IMI Desert Eagle", alias: [".50 Action Express", ".44 Magnum"], cartridge: [".50 Action Express",".44 Magnum"], length: 273, sr: 219, rof: [24,27], velocity: [443,376], weightMin: [1.780,1.653], weightMax: [2.091,1.913], cap: [8,9], cost: [700,600], country :"il", year:1982},
+      {name: "Colt M1911", cartridge: ".45 ACP", rof: 35, velocity: 252, cap: 7, weightMin: 1.049, weightMax: 1.271, length: 219, sr: 165, cost: 400, country: "us", year:1911},
       {name: "MAB PA-15", cartridge: "9x19mm", velocity: 350, weightMin: 1.090, weightMax: 1.365, rof: 40, length: 203, sr: 158, cap: 15, country: "fr"},
-      {name: "Makarov", cartridge: "9x18mm", length: 162, sr: 129, velocity: 315, weight: 0.73, rof: 40, cap: 8, country: "ru"},
-      {name: "Manurhin MR73", alias: ["10.2cm barrel","13.2cm barrel","15.2cm barrel","20.3cm barrel","7.6cm barrel"], cartridge:".357 Magnum", rof:24, cap: 6, velocity: [410,428,468,504,385], weightMin: [0.95,1.05,1.07,1.17,0.89], weightMax: [1.046,1.146,1.166,1.266,0.986], length: [233,264,283,334,205], sr: [142,172,192,243,117], country: "fr"},
-      {name: "Mk. 22 mod 0", cartridge: "9x19mm", length: 216, sr: 134, velocity: 274, weightMin: 0.737, weightMax: 0.954, cap: 8, rof: 40, country: "us"},
-      {name: "MP-443 Grach", cartridge: "9x19mm", velocity: 450, rof: 40, length: 198, sr: 166, weightMin: 0.950, weightMax: 1.150, cap: 17, country: "ru"},
-      {name: "PB/6P9", cartridge: "9x18mm", rof: 24, velocity: 290, weightMin: 0.972, weightMax: 1.098, cap: 8, length: 297, sr: 130, country: "ru"},
-      {name: "Ruger GS-32N", cartridge: ".357 Magnum", rof: 24, velocity: 385, cap: 6, weightMin: 0.964, weightMax: 1.060, length: 197, sr: 150, cost: 300, country: "us"},
-      {name: "S&W ASP", cartridge: "9x19mm", rof: 35, velocity: 347, cap: 7, weightMin: 0.624, weightMax: 0.765, length: 171, sr: 51, cost: 1100, country: "us"},
-      {name: "S&W Model 19", alias : ["10.2cm barrel","15.3cm barrel","6.6cm barrel"], cartridge: ".357 Magnum", velocity: [368,387,331], length: [241,292,190], weightMin: [0.992,1.152,0.879], weightMax: [1.088,1.248,0.975],  sr: [149,200,113], cap: 6, rof: 24, cost: 350, country: "us"},
+      {name: "Makarov", cartridge: "9x18mm", length: 162, sr: 129, velocity: 315, weight: 0.73, rof: 40, cap: 8, country: "ru", year:1951},
+      {name: "Manurhin MR73", alias: ["10.2cm barrel","13.2cm barrel","15.2cm barrel","20.3cm barrel","7.6cm barrel"], cartridge:".357 Magnum", rof:24, cap: 6, velocity: [410,428,468,504,385], weightMin: [0.95,1.05,1.07,1.17,0.89], weightMax: [1.046,1.146,1.166,1.266,0.986], length: [233,264,283,334,205], sr: [142,172,192,243,117], country: "fr", year:1973},
+      {name: "Mk. 22 mod 0", cartridge: "9x19mm", length: 216, sr: 134, velocity: 274, weightMin: 0.737, weightMax: 0.954, cap: 8, rof: 40, country: "us", year:1967},
+      {name: "MP-443 Grach", cartridge: "9x19mm", velocity: 450, rof: 40, length: 198, sr: 166, weightMin: 0.950, weightMax: 1.150, cap: 17, country: "ru", year: 2003},
+      {name: "PB/6P9", cartridge: "9x18mm", rof: 24, velocity: 290, weightMin: 0.972, weightMax: 1.098, cap: 8, length: 297, sr: 130, country: "ru", year:1967},
+      {name: "Ruger GS-32N", cartridge: ".357 Magnum", rof: 24, velocity: 385, cap: 6, weightMin: 0.964, weightMax: 1.060, length: 197, sr: 150, cost: 300, country: "us", year:1971},
+      {name: "S&W ASP", cartridge: "9x19mm", rof: 35, velocity: 347, cap: 7, weightMin: 0.624, weightMax: 0.765, length: 171, sr: 51, cost: 1100, country: "us", year:1970},
+      {name: "S&W Model 19", alias : ["10.2cm barrel","15.3cm barrel","6.6cm barrel"], cartridge: ".357 Magnum", velocity: [368,387,331], length: [241,292,190], weightMin: [0.992,1.152,0.879], weightMax: [1.088,1.248,0.975],  sr: [149,200,113], cap: 6, rof: 24, cost: 350, country: "us", year: 1957},
       {name: "S&W Model 29", alias: ["10.2cm barrel","16.5cm barrel","21.3cm barrel","29 cm barrel"], cartridge:".44 Magnum", velocity: [425,448,459,475], length: [239,302,349,410], sr: [117,180,228,305], weightMin: [1.219,1.332,1.460,1.644], weightMax: [1.365,1.478,1.606,1.790], cap: 6, rof: 24, country: "us"},
       {name: "S&W Model 439", cartridge: "9x19mm", length: 194, sr: 141, weightMin: 0.779, weightMax: 0.946, cap: 8, rof: 24, velocity: 356, cost: 450, country: "us"},
       {name: "S&W Model 459", cartridge: "9x19mm", length: 194, sr: 141, weightMin: 0.947, weightMax: 1.021, cap: 14, rof: 45, velocity: 355, cost: 500, country: "us"},
@@ -408,53 +463,70 @@ module.exports = function() {
       shortname: "smgs",
       name: "Submachine gun",
       weapons : [
-      {name: "FN P90", cartridge: "5.7x28mm", rof: 950, velocity: 735, weight: 2.6, length:415, sr: 370, cap: 40, country: "be"},
-      {name: "H&K MP7", cartridge: "4.6x30mm", rof: 900, velocity: 715, weight: 1.2, length:505, sr: 143, cap: 50, country: "de"},
-      {name: "Steyr AUG 9mm", cartridge: "9x19mm", rof: 700, velocity: 400, weightMin:3.300, weightMax: 3.921, length: 665, sr: 192, cap: 32, country: "at"},
-      {name: "Steyr MPi 69, MPi 81", cartridge: "9x19mm", rof: 550, velocity: 381, weightMin: 2.930, weightMax: 3.551, length: 465, sr: 326, cap: 32, country: "at"},
-      {name: "Jatimatic", cartridge: "9x19mm", rof: 625, velocity: 411, weightMin: 1.650, weightMax: 2.280, length: 375, sr: 290, cap: 40, country: "fi"},
-      {name: "MAT 49", cartridge: "9x19mm", rof: 600, velocity: 354, weightMin: 3.640, weightMax : 4.760, length: 460, sr: 378, cap: 32, country: "fr"},
-      {name: "Walther MP-K, Walther MP-L", cartridge: "9x19mm", rof: 550, velocity: 356, weightMin: 2.8, weightMax: 3.384, length: 368, sr: 270, cap: 32, country: "de"},
-      {name: "H&K MP5", alias: ["MP5A2","MP5A3","MP5A4","MP5A5","MP5/10","MP5/40"], cartridge:["9x19mm","9x19mm","9x19mm","9x19mm","10mm Auto",".40 S&W"], rof: 650, velocity: [400,400,400,400,425,315], weightMin: [2.54,2.88,2.54,2.88,2.7,2.7], weightMax: [2.71,4.104,2.71,4.104,2.7,2.7], length:[680,490,680,490,490,490],sr:340,cap:30, country:"de" },
-      {name: "H&K MP5 SD", alias: ["MP5 SD2, MP5 SD3, MP5 SD4, MP5 SD5"], rof: 800, velocity: 285, weightMin: [3.1,3.4,3.1,3.4], weightMax: [3.63,3.93,3.63,3.93], length: [780,610,780,610], sr: 340, cap: 30, country: "de"},
-      {name: "H&K MP5K, H&K MP5KA4", cartridge: "9x19mm", rof: 900, velocity: 375, weightMin: 2.0, weightMax: 2.3, length: 325, sr: 260, cap: 15, country: "de"},
-      {name: "H&K MP5KA1, H&K MP5KA5", cartridge: "9x19mm", rof: 900, velocity: 375, weightMin: 2.0, weightMax: 2.3, length: 325, sr: 190, cap: 15, country: "de"},
-      {name: "H&K MP2000", cartridge: "9x19mm", rof: 875, velocity: 366, weightMin: 2.781, weightMax: 3.221, length: 387, sr: 292, cap: 30, country: "de"},
-      {name: "H&K UMP-45", alias:["UMP-45","UMP-9"], cartridge: [".45 ACP","9x19mm"], length: 450, sr: 325, rof: 650, weight: 2.65, cap: 30, country: "de"},
-      {name: "KRISS Vector", cartridge: ".45 ACP", rof: 1200, sr: 216, length: 620, velocity: 280, weight: 2.7, cap: 25, country: "us"},
-      {name: "UZI", cartridge: "9x19mm", rof: 600, velocity: 400, cap: 32, weightMin: 3.5, weightMax: 4.104, sr: 309, length: 470, country: "il"},
-      {name: "Mini UZI", cartridge: "9x19mm", rof: 950, velocity: 350, weightMin: 2.7, weightMax: 3.1, length: 360, sr: 235, cap: 20, country: "il"},
-      {name: "Micro UZI", cartridge: "9x19mm", rof: 1250, velocity: 350, weightMin: 1.95, weightMax: 2.350, length: 267, sr: 175, cap: 25, country: "il"},
-      {name: "MP9 (Steyr TMP)", cartridge:  "9x19mm", rof: 875, velocity: 400, weight: 1.3, length: 282, sr: 188, cap: 30, country: "at"},
-      {name: "PM-12S", cartridge: "9x19mm", rof: 550, velocity: 381, weightMin: 3.240, weightMax: 3.850, length: 418, sr: 285, cap: 32, country: "it"},
-      {name: "Spectre M-4", cartridge: "9x19mm", rof: 850, velocity: 399, weightMin: 2.903, weightMax: 3.793, length: 350, sr: 309, cap: 50, country: "it"},
-      {name: "Z-62, Z-70/B", cartridge: "9x19mm", rof: 550, velocity: 381, cap: 20, weightMin: 2.870, weightMax: 3.430, length: 480, sr: 370, country: "es"},
-      {name: "Z-84 Short", cartridge: "9x19mm", rof: 600, velocity: 362, cap: 30, weightMin: 3.100, weightMax: 3.700, length: 410, sr: 330, country: "es"},
-      {name: "Z-84 Long", cartridge: "9x19mm", rof: 600, velocity: 362, cap: 30, weightMin: 3.150, weightMax: 3.750, length: 465, sr: 330, country: "es"},
-      {name: "M45B", cartridge: "9x19mm", rof: 600, velocity: 370, cap: 36, weightMin: 3.900, weightMax: 4.559, length: 552, sr: 359, country: "us"},
-      {name: "Sterling L2A3", cartridge: "9x19mm", rof: 550, velocity: 390, cap: 68, weightMin: 0.638, weightMax: 1.454, length: 483, sr: 410, country: "gb"},
-      {name: "Sterling L34A1", cartridge: "9x19mm", rof: 550, velocity: 307, cap: 68, weightMin: 0.638, weightMax: 1.454, length: 660, sr: 502, country: "gb"},
-      {name: "Sterling Mark 7 A4, Mark 7 A8", cartridge: "9x19mm", rof: 560, velocity: 356, cap: 68, weightMin: 0.276, weightMax: 1.454, length: 355, sr: 108, country: "gb"},
-      {name: "Ingram MAC-10", alias: ["9x19mm",".45 ACP"], cartridge: ["9x19mm",".45 ACP"], rof: [1090,1145], velocity: [366,280], cap: [32,30], weightMin: 2.840, weightMax: 3.424, length: 269, sr: 210, cost: 300, country: "us"},
-      {name: "Ingram MAC-11", alias: [".380 ACP", "9x19mm"], cartridge: [".380 ACP","9x19mm"], rof: 1200, velocity: [293,366], cap: 32, weightMin: [1.59,1.701], weightMax: [2.100,2.179], length: [248,330], sr: [176,230], country: "us"},
-      {name: "CZ Skorpion EVO 3", cartridge: "9x19mm", rof: 1150, velocity: 370, cap: 30, weightMin: 2.72, weightMax: 3.26, length: 410, sr: 240, country: "cz"},
-      {name: "S&W Model 76", cartridge: "9x19mm", rof: 750, velocity: 381, cap: 36, weightMin: 3.289, weightMax: 3.969, length: 514, sr: 287, country: "us"},
-      {name: "Viking", cartridge: "9x19mm", rof: 650, velocity: 400, cap: 36, weightMin: 2.722, weightMax: 3.352, length: 387, sr: 258, country: "us"},
-      {name: "M3A1", cartridge: ".45 ACP", rof: 450, velocity: 280, cap: 30, weightMin: 3.470, weightMax: 4.455, length: 579, sr: 276, country: "us"},
-      {name: "FMG-9", cartridge: "9x19mm", rof: 650, velocity: 378, cap: 25, weightMin: 2.250, weightMax: 2.854, length: 262, sr: 100, country: "us"},
-      {name: "Colt 9mm", cartridge: "9x19mm", rof: 900, velocity: 397, cap: 32, weightMin: 2.608, weightMax: 3.219, length: 651, sr: 368, country: "us"},
-      {name: "Colt 9mm Suppressed", cartridge: "9x19mm", rof: 700, velocity: 285, cap: 32, weightMin: 3.062, weightMax: 3.628, length: 697, sr: 368, country: "us"},
-      {name: "Milcor BXP", cartridge: "9x19mm", rof: 1000, cap: 32, weight: 2.5, length: 387, sr: 100, country: "za"},
-      {name: "Daewoo K7", cartridge: "9x19mm", rof: 1100, cap: 30, weight: 4, length: 620, sr: 360, velocity: 285, country : "kr"},
-      {name: "QCW-05", cartridge: "5.8x21mm", length: 500, weight: 2.2, velocity: 321, rof: 900, sr: 180, cap: 50, country: "cn"},
-      //{name: "SIG MPX", alias: ["MPX-P","MPX-K","MPX-SD"], cartridge: "9x19mm", rof: 850, weight: [2.1,1.9,2.0,2.9], velocity: [380,355,380,285], length: [460,338,409,688], cap: 30, sr: [270,270,218,371], country: "ch"},
-      //{name: "Skorpion", alias: ["vz. 61","vz. 63", "vz. 64","vz. 68"], length:269, sr: 148, weight:1.3, cartridge: [".32 ACP",".380 ACP","9x18mm","9x19mm"], velocity: [317,292,320,320], rof: [840,900,900,900], cap: 20, country: "cz"},
-      {name: "PP-19 Bizon", cartridge: "9x18mm", rof: 650, length: 425, weight: 2.1, velocity: 320, sr: 220, cap: 64, country: "ru"},
-      {name: "PP-2000", cartridge: "9x19mm", weight: 1.4, length:340, rof: 600, cap: 20, sr: 245, country: "ru"},
-      {name: "PP-90M1", cartridge: "9x19mm", weight: 1.7, length: 424, velocity: 320, rof: 800, cap: 64, sr: 240, country: "ru"},
-      {name: "Minebea PM-9", cartridge: "9x19mm", weight: 2.8, length: 399, rof: 1100, cap: 25, sr: 275, country: "jp"},
-      {name: "Beretta MX4", cartridge: "9x19mm", weight: 2.48, rof: 700, length: 647, velocity: 390, cap: 30, sr: 320, country: "it"},
-      {name: "CS/LS2", cartridge: "9x19mm", rof: 400, velocity: 321, weight: 2.0, length: 450, cap: 30, sr: 165, country: "cn"}
+        {name: "AEK-919K 'Kashtan'", cartridge: "9x18mm", weight: 1.65, length: 325, rof: 900, cap: 30, sr: 150, country: "ru", year:1990},
+        {name: "Agram 2000", cartridge: "9x19mm", cap:32, weight: 1.8, length: 482, rof: 800, sr: 372, country: "cr", year:2000},
+        {name: "Arsenal Shipka", alias: ["9x18mm","9x19mm"], cartridge: ["9x18mm","9x19mm"], rof: 700, weight: 2.2, length: 338, sr: 242, cap: [32,25], country: "bg", year:1996},
+        {name: "Beretta MX4", cartridge: "9x19mm", weight: 2.48, rof: 700, length: 647, velocity: 390, cap: 30, sr: 320, country: "it", year:2003},
+        {name: "Carl Gustav m/45", cartridge:"9x19mm", weight: 3.35, rof: 600, velocity: 425, length: 550, sr: 390, cap:36, country: "se", year:1945},
+        {name: "Colt 9mm", alias: ["Colt 9mm","Colt 9mm Suppressed"], cartridge: "9x19mm", rof: 900, velocity: [397,285], cap: 32, weightMin: [2.608,3.062], weightMax: [3.219,3.628], length: [651,697], sr: 368, country: "us", year:1982},
+        {name: "CS/LS2", cartridge: "9x19mm", rof: 400, velocity: 321, weight: 2.0, length: 450, cap: 30, sr: 165, country: "cn", year:2006},
+        {name: "CZ Skorpion EVO 3", cartridge: "9x19mm", rof: 1150, velocity: 370, cap: 30, weightMin: 2.72, weightMax: 3.26, length: 410, sr: 240, country: "cz", year:2009},
+        {name: "CZW 438 M9", cartridge:"9x19mm", weight:2.7, length:445, sr:309, cap:30, rof:780, year: 2002, country: "cz"},
+        {name: "Daewoo K7", cartridge: "9x19mm", rof: 1100, cap: 30, weight: 4, length: 620, sr: 360, velocity: 285, country : "kr", year:2001},
+        {name: "Dux", alias: ["Model 53","Model 59"], cartridge:"9x19mm", weight:[3.5,3], rof: [500,550], length: [615,580], sr: 360, velocity:390, cap:[50,32], year:[1953,1959], country: "de"},
+        {name: "F1A1", cartridge: "9x19mm", weight: 3.26, length: 715, rof: 600, sr: 212, cap:32, country:"au", year:1963},
+        {name: "FAMAE SAF", cartridge: "9x19mm", alias: ["SAF", "SAF Silencada"], weight: 2.7, length: 410, rof: 1200, sr:328, cap:30, country:"cl"},
+        {name: "Floro MK-9", cartridge:"9x19mm", cap:32, rof: 825, velocity: 400, length: 46, weightMin:3.18, weightMax: 3.2, sr: 233, country: "ph"},
+        {name: "FMG-9", cartridge: "9x19mm", rof: 650, velocity: 378, cap: 25, weightMin: 2.250, weightMax: 2.854, length: 262, sr: 100, country: "us"},
+        {name: "FMK-3 Mod 2", cartridge: "9x19mm", cap:40, country: "ar", weight: 3.4, length: 523, rof: 650, sr: 360},
+        {name: "FN P90", cartridge: "5.7x28mm", rof: 950, velocity: 735, weight: 2.6, length:415, sr: 370, cap: 40, country: "be"},
+        {name: "Franchi LF-57", cartridge:"9x19mm", cap:40, country: "it", weight: 3.17, length: 419, rof: 500, sr: 342, year: 1956},
+        {name: "H&K MP2000", cartridge: "9x19mm", rof: 875, velocity: 366, weightMin: 2.781, weightMax: 3.221, length: 387, sr: 292, cap: 30, country: "de", year:1987},
+        {name: "H&K MP5 SD", alias: ["MP5 SD2, MP5 SD3, MP5 SD4, MP5 SD5"], rof: 800, velocity: 285, weightMin: [3.1,3.4,3.1,3.4], weightMax: [3.63,3.93,3.63,3.93], length: [780,610,780,610], sr: 340, cap: 30, country: "de", year:1970},
+        {name: "H&K MP5", alias: ["MP5A2","MP5A3","MP5A4","MP5A5","MP5/10","MP5/40"], cartridge:["9x19mm","9x19mm","9x19mm","9x19mm","10mm Auto",".40 S&W"], rof: 650, velocity: [400,400,400,400,425,315], weightMin: [2.54,2.88,2.54,2.88,2.7,2.7], weightMax: [2.71,4.104,2.71,4.104,2.7,2.7], length:[680,490,680,490,490,490],sr:340,cap:30, country:"de",year:1970},
+        {name: "H&K MP5K, H&K MP5KA4", cartridge: "9x19mm", rof: 900, velocity: 375, weightMin: 2.0, weightMax: 2.3, length: 325, sr: 260, cap: 15, country: "de", year:1991},
+        {name: "H&K MP5KA1, H&K MP5KA5", cartridge: "9x19mm", rof: 900, velocity: 375, weightMin: 2.0, weightMax: 2.3, length: 325, sr: 190, cap: 15, country: "de", year:1991},
+        {name: "H&K MP7", cartridge: "4.6x30mm", rof: 900, velocity: 715, weight: 1.2, length:505, sr: 143, cap: 50, country: "de", year:2001},
+        {name: "H&K UMP-45", alias:["UMP-45","UMP-9"], cartridge: [".45 ACP","9x19mm"], length: 450, sr: 325, rof: 650, weight: 2.65, cap: 30, country: "de",year:1999},
+        {name: "Ingram MAC-10", alias: ["9x19mm",".45 ACP"], cartridge: ["9x19mm",".45 ACP"], rof: [1090,1145], velocity: [366,280], cap: [32,30], weightMin: 2.840, weightMax: 3.424, length: 269, sr: 210, cost: 300, country: "us"},
+        {name: "Ingram MAC-11", alias: [".380 ACP", "9x19mm"], cartridge: [".380 ACP","9x19mm"], rof: 1200, velocity: [293,366], cap: 32, weightMin: [1.59,1.701], weightMax: [2.100,2.179], length: [248,330], sr: [176,230], country: "us"},
+        {name: "Intratec TEC-9", cartridge:"9x19mm", cap: 20, country: "us", velocity: 360, length: 317, sr: 271, weight: 1.4, rof:850},
+        {name: "Jatimatic", cartridge: "9x19mm", rof: 625, velocity: 411, weightMin: 1.650, weightMax: 2.280, length: 375, sr: 290, cap: 40, country: "fi", year:1984},
+        {name: "KRISS Vector", cartridge: ".45 ACP", rof: 1200, sr: 216, length: 620, velocity: 280, weight: 2.7, cap: 25, country: "us"},
+        {name: "LaFrance M16K-45", cartridge:".45 ACP", rof: 625, velocity: 260, weight: 3.9, length: 676, sr: 350, cap:30, country:"us"},
+        {name: "Lusa A2", cartridge:"9x19mm", cap: 30, country: "us", rof: 900, weight: 2.8, length: 451, sr: 285},
+        {name: "M3A1", cartridge: ".45 ACP", rof: 450, velocity: 280, cap: 30, weightMin: 3.470, weightMax: 4.455, length: 579, sr: 276, country: "us"},
+        {name: "M45B", cartridge: "9x19mm", rof: 600, velocity: 370, cap: 36, weightMin: 3.900, weightMax: 4.559, length: 552, sr: 359, country: "us"},
+        {name: "Madsen", alias: ["Madsen M1946", "Madsen M1950", "Madsen M1953"], cartridge:"9x19mm", weight: [3.15,3.15,3.2], length: [550,530,530], rof: [480, 550,550], sr: 342, cap: 32, country: "dk"},
+        {name: "MAT 49", cartridge: "9x19mm", rof: 600, velocity: 354, weightMin: 3.640, weightMax : 4.760, length: 460, sr: 378, cap: 32, country: "fr"},
+        {name: "Micro UZI", cartridge: "9x19mm", rof: 1250, velocity: 350, weightMin: 1.95, weightMax: 2.350, length: 267, sr: 175, cap: 25, country: "il"},
+        {name: "Milcor BXP", cartridge: "9x19mm", rof: 1000, cap: 32, weight: 2.5, length: 387, sr: 100, country: "za"},
+        {name: "Minebea PM-9", cartridge: "9x19mm", weight: 2.8, length: 399, rof: 1100, cap: 25, sr: 275, country: "jp"},
+        {name: "Mini UZI", cartridge: "9x19mm", rof: 950, velocity: 350, weightMin: 2.7, weightMax: 3.1, length: 360, sr: 235, cap: 20, country: "il"},
+        {name: "MP9 (Steyr TMP)", cartridge:  "9x19mm", rof: 875, velocity: 400, weight: 1.3, length: 282, sr: 188, cap: 30, country: "at"},
+        {name: "PM-12S", cartridge: "9x19mm", rof: 550, velocity: 381, weightMin: 3.240, weightMax: 3.850, length: 418, sr: 285, cap: 32, country: "it"},
+        {name: "PM-63 RAK", cartridge:"9x18mm", velocity: 320, weight:1.6, length:583, cap:25, rof:650, sr: 153, country: "pl", year:1964},
+        {name: "PP-19 Bizon", cartridge: "9x18mm", rof: 650, length: 425, weight: 2.1, velocity: 320, sr: 220, cap: 64, country: "ru"},
+        {name: "PP-2000", cartridge: "9x19mm", weight: 1.4, length:340, rof: 600, cap: 20, sr: 245, country: "ru"},
+        {name: "PP-90M1", cartridge: "9x19mm", weight: 1.7, length: 424, velocity: 320, rof: 800, cap: 64, sr: 240, country: "ru"},
+        {name: "QCW-05", cartridge: "5.8x21mm", length: 500, weight: 2.2, velocity: 321, rof: 900, sr: 180, cap: 50, country: "cn"},
+        {name: "S&W Model 76", cartridge: "9x19mm", rof: 750, velocity: 381, cap: 36, weightMin: 3.289, weightMax: 3.969, length: 514, sr: 287, country: "us"},
+        {name: "Sa vz. 23", alias: ["Sa vz. 23","Sa vz. 24","Sa vz. 25","Sa vz. 26"], cartridge:["9x19mm","7.62x25mm","9x19mm","7.62x25mm"], weight: [3.5,3.5,3.27,3.27], length: [686,445,686,445], rof: 650, cap: [40,32,40,32], sr: 288, country: "cz"},
+        //{name: "SIG MPX", alias: ["MPX-P","MPX-K","MPX-SD"], cartridge: "9x19mm", rof: 850, weight: [2.1,1.9,2.0,2.9], velocity: [380,355,380,285], length: [460,338,409,688], cap: 30, sr: [270,270,218,371], country: "ch"},
+        //{name: "Skorpion", alias: ["vz. 61","vz. 63", "vz. 64","vz. 68"], length:269, sr: 148, weight:1.3, cartridge: [".32 ACP",".380 ACP","9x18mm","9x19mm"], velocity: [317,292,320,320], rof: [840,900,900,900], cap: 20, country: "cz"},
+        {name: "Spectre M-4", cartridge: "9x19mm", rof: 850, velocity: 399, weightMin: 2.903, weightMax: 3.793, length: 350, sr: 309, cap: 50, country: "it", year:1983},
+        {name: "ST Kinetics CPW", alias:["9x19mm","4.6x30mm","5.7x28mm"], cartridge: ["9x19mm","4.6x30mm","5.7x28mm"], weight:1.5, cap:30, rof: 1000, length: 350, sr:257, country: "sg", year:2007},
+        {name: "Sterling L2A3", cartridge: "9x19mm", rof: 550, velocity: 390, cap: 68, weightMin: 0.638, weightMax: 1.454, length: 483, sr: 410, country: "gb"},
+        {name: "Sterling L34A1", cartridge: "9x19mm", rof: 550, velocity: 307, cap: 68, weightMin: 0.638, weightMax: 1.454, length: 660, sr: 502, country: "gb"},
+        {name: "Sterling Mark 7 A4, Mark 7 A8", cartridge: "9x19mm", rof: 560, velocity: 356, cap: 68, weightMin: 0.276, weightMax: 1.454, length: 355, sr: 108, country: "gb"},
+        {name: "Steyr AUG 9mm", cartridge: "9x19mm", rof: 700, velocity: 400, weightMin:3.300, weightMax: 3.921, length: 665, sr: 192, cap: 32, country: "at"},
+        {name: "Steyr MPi 69, MPi 81", cartridge: "9x19mm", rof: 550, velocity: 381, weightMin: 2.930, weightMax: 3.551, length: 465, sr: 326, cap: 32, country: "at"},
+        {name: "Uzi", cartridge: "9x19mm", rof: 600, velocity: 400, cap: 32, weightMin: 3.5, weightMax: 4.104, sr: 309, length: 470, country: "il", year:1953},
+        {name: "Viking", cartridge: "9x19mm", rof: 650, velocity: 400, cap: 36, weightMin: 2.722, weightMax: 3.352, length: 387, sr: 258, country: "us"},
+        {name: "Walther MP-K, MP-L", cartridge: "9x19mm", rof: 550, velocity: 356, weightMin: 2.8, weightMax: 3.384, length: 368, sr: 270, cap: 32, country: "de", year:1963},
+        {name: "Z-62, Z-70/B", cartridge: "9x19mm", rof: 550, velocity: 381, cap: 20, weightMin: 2.870, weightMax: 3.430, length: 480, sr: 370, country: "es"},
+        {name: "Z-84 Long", cartridge: "9x19mm", rof: 600, velocity: 362, cap: 30, weightMin: 3.150, weightMax: 3.750, length: 465, sr: 330, country: "es"},
+        {name: "Z-84 Short", cartridge: "9x19mm", rof: 600, velocity: 362, cap: 30, weightMin: 3.100, weightMax: 3.700, length: 410, sr: 330, country: "es"},
       ]
     },
     {
@@ -482,7 +554,7 @@ module.exports = function() {
       {name: "FN SCAR-L CQB", cartridge: "5.56x45mm", rof: 600, velocity: 797, weight: 3.4, length: 787, sr: 385, cap: 30, country: "be"},
       {name: "Galil SAR", cartridge: "5.56x45mm", rof: 650, velocity: 920, weightMin: 3.65, weightMax: 4.467, length: 614, sr: 475, cap: 35, country: "il"},
       {name: "H&K HK33KA1", cartridge: "5.56x45mm", rof: 700, velocity: 880, weightMin: 3.969, weightMax: 4.524, length: 675, sr: 480, cap: 30, country: "de"},
-      {name: "H&K HK53", cartridge: "5.56x45mm", rof: 700, velocity: 750, weightMin: 3.048, weightMax: 3.603, length: 563, sr: 390, cap: 25, country: "de"},
+      {name: "H&K HK53", cartridge: "5.56x45mm", rof: 700, velocity: 750, weightMin: 3.048, weightMax: 3.603, length: 563, sr: 390, cap: 25, country: "de", year:1975},
       {name: "H&K G41K", cartridge: "5.56x45mm", rof: 850, velocity: 870, weightMin: 4.309, weightMax: 4.792, length: 740, sr: 566, cap: 30, country: "de"},
       {name: "H&K G36C", cartridge: "5.56x45mm", rof: 750, velocity: 762, weight: 2.8, length: 720, sr: 315, cap: 30, country: "de"},
       {name: "H&K G36K", cartridge: "5.56x45mm", rof: 750, velocity: 830, weight: 3.5, length: 860, sr: 315, cap: 30, country: "de"},
