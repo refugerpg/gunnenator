@@ -146,6 +146,14 @@ module.exports = function() {
       meplat: 0.7,
       bc: 0.254
     },
+    "6.8 SPC" : {
+      bulletDiameter: 7.0,
+      bulletMass: 7.12,
+      bulletVelocity: 800,
+      chargeMass: 1.75,
+      meplat:1.75,
+      bc: 0.370
+    },
     '7.62x25mm' : {
       bulletDiameter: 7.87,
       bulletMass: 5.5,
@@ -219,6 +227,14 @@ module.exports = function() {
       meplat: 2.17,
       bc: 0.447
     },
+    '.303 British' : {
+      bulletDiameter:7.9,
+      bulletMass:11,
+      bulletVelocity:761,
+      chargeMass:2.65,
+      meplat:1.58,
+      bc: 0.467
+    },
     '.30-06 Springfield' : {
       bulletDiameter: 7.8,
       bulletMass: 11,
@@ -226,6 +242,14 @@ module.exports = function() {
       chargeMass: 3.62,
       meplat: 3.8,
       bc: 0.494
+    },
+    "8mm Lebel" : {
+      bulletDiameter: 8.3,
+      bulletMass: 12.8,
+      bulletVelocity:730,
+      chargeMass: 2.85,
+      meplat: 1.53,
+      bc: 0.5745
     },
     '.50 BMG' : {
       bulletDiameter: 12.7,

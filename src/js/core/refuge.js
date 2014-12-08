@@ -92,7 +92,6 @@ module.exports = function() {
 
   var columns = [
     { field: "name", cellClass: 'first', minWidth: 225, enableColumnMenu: false, cellTemplate: '<a ng-href="{{row.entity.href}}"><div class="ui-grid-cell-contents" ng-class="col.colIndex()"><span ng-cell-text>{{row.entity[col.field]}}</span></div></a>'},
-    { field: 'type', enableColumnMenu: false},
     { field: 'cartridge', enableColumnMenu: false},
     { field: 'flag', enableColumnMenu: false, maxWidth: 48, cellTemplate: '<div class="ui-grid-cell-contents" ng-class="col.colIndex()"><span ng-cell-text><img ng-src="{{row.entity.flag}}"></img></span></div>'},
     { field: 'year', maxWidth: 48, enableColumnMenu: false},
@@ -225,7 +224,7 @@ module.exports = function() {
         var comparisonArray = [weight, velocity, pf, spread, base, max, weapon.rof, weapon.length, weapon.sr, weapon.cap, glf];
         for (var a=0; a < comparisonArray.length; a++) {
           if (comparisonArray[a] === undefined) {
-            new Error(weapon.name," parameter is undefined.");
+            console.log(weapon.name," parameter is undefined.");
           }
           comparisonArray[a] = parseFloat(comparisonArray[a].toFixed(2));
         }
