@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "angular": "1.2.23",
-    "angular-bootstrap": "^0.11.0",
+    "angular-bootstrap": "0.12.0",
     "angular-sanitize":"0.0.1",
     "angular-ui-router": "^0.2.11",
     "browserify": "6.0.2",
