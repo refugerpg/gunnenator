@@ -579,25 +579,15 @@ input[type="text"].ui-grid-filter-input:hover {
   transform: rotate(180deg);
 }
 @font-face {
-  font-family: 'ui-grid';
-  src: url('ui-grid.eot');
-  src: url('ui-grid.eot#iefix') format('embedded-opentype'), url('ui-grid.woff') format('woff'), url('ui-grid.ttf?') format('truetype'), url('ui-grid.svg?#ui-grid') format('svg');
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.2.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/*
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: 'ui-grid';
-    src: url('../font/ui-grid.svg?12312827#ui-grid') format('svg');
-  }
-}
-*/
 [class^="ui-grid-icon"]:before,
 [class*=" ui-grid-icon"]:before {
-  font-family: "ui-grid";
+  font-family: "FontAwesome";
   font-style: normal;
   font-weight: normal;
   speak: none;
@@ -1245,51 +1235,51 @@ div.ui-grid-cell input.ng-valid {
 }
 
 .ui-grid-icon-plus-squared:before {
-  content: '\c350';
+  content: '\f196';
 }
 /* '썐' */
 .ui-grid-icon-minus-squared:before {
-  content: '\c351';
+  content: '\f147';
 }
 /* '썑' */
 .ui-grid-icon-search:before {
-  content: '\c352';
+  content: '\f002';
 }
 /* '썒' */
 .ui-grid-icon-cancel:before {
-  content: '\c353';
+  content: '\f00d';
 }
 /* '썓' */
 .ui-grid-icon-info-circled:before {
-  content: '\c354';
+  content: '\f05a';
 }
 /* '썔' */
 .ui-grid-icon-lock:before {
-  content: '\c355';
+  content: '\f023';
 }
 /* '썕' */
 .ui-grid-icon-lock-open:before {
-  content: '\c356';
+  content: '\f13e';
 }
 /* '썖' */
 .ui-grid-icon-pencil:before {
-  content: '\c357';
+  content: '\f040';
 }
 /* '썗' */
 .ui-grid-icon-down-dir:before {
-  content: '\c358';
+  content: '\f0d7';
 }
 /* '썘' */
 .ui-grid-icon-up-dir:before {
-  content: '\c359';
+  content: '\f0d8';
 }
 /* '썙' */
 .ui-grid-icon-left-dir:before {
-  content: '\c35a';
+  content: '\f0d9';
 }
 /* '썚' */
 .ui-grid-icon-right-dir:before {
-  content: '\c35b';
+  content: '\f0da';
 }
 /* '썛' */
 .ui-grid-icon-left-open:before {
@@ -1305,26 +1295,26 @@ div.ui-grid-cell input.ng-valid {
 }
 /* '썞' */
 .ui-grid-icon-filter:before {
-  content: '\c35f';
+  content: '\f0b0';
 }
 /* '썟' */
 .ui-grid-icon-sort-alt-up:before {
-  content: '\c360';
+  content: '\f0d8';
 }
 /* '썠' */
 .ui-grid-icon-sort-alt-down:before {
-  content: '\c361';
+  content: '\f0d7';
 }
 /* '썡' */
 .ui-grid-icon-ok:before {
-  content: '\c362';
+  content: '\f00c';
 }
 /* '썢' */
 .ui-grid-icon-menu:before {
-  content: '\c363';
+  content: '\f0c9';
 }
 /* '썣' */
 .ui-grid-icon-spin5:before {
-  content: '\ea61';
+  content: '\f110';
 }
 /* '' */

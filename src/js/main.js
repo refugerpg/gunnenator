@@ -1,16 +1,12 @@
+var config = require('./config')();
 var angular = require('angular');
 var angularuirouter = require('angular-ui-router');
 var uigrid = require('ui-grid');
 var uibootstrap = require('angular-bootstrap');
 var angularsanitize = require('angular-sanitize');
 var gunnenator = angular.module('gunnerator', ['ui.grid', 'ui.router', 'ui.bootstrap', 'ngSanitize']);
-var engines = [
-  {"name" : "Refuge", "engine" : require('./core/refuge')}
-];
-
+var engines = config.engines;
 var switchEngine = new Event('switchEngine');
-
-// Instantiate all the services!
 
 for (var i=0; i < engines.length; i++) {
   gunnenator.service(engines[i].name, engines[i].engine)
@@ -25,9 +21,9 @@ gunnenator.factory('core', require('./core/core'))
   if (localStorage.gunnenatorEngine) {
     this.engine = localStorage.gunnenatorEngine;
   } else {
-    this.engine = engines[0].name;
+    this.engine = engines[config.defaultEngine].name;
   }
-  this.baseURL = "";
+  this.baseURL = config.baseURL;
 
   this.get = function() {
     return this.engine;

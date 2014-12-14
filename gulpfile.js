@@ -66,6 +66,8 @@ gulp.task('json', function() {
 gulp.task('dist', ['json','partials','css'], function() {
   gulp.src('./src/img/**/*', {base: './src/img'})
     .pipe(gulp.dest('./dist/img/'));
+  gulp.src('./src/fonts/*', {base: './src/fonts'})
+  .pipe(gulp.dest('./dist/fonts/'));
   console.log('Building and minifying the gunnerator');
   return browserify('./src/js/main.js')
     .bundle()

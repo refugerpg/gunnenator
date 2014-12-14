@@ -91,18 +91,18 @@ module.exports = function() {
 
 
   var columns = [
-    { field: "name", cellClass: 'first', minWidth: 225, enableColumnMenu: false, cellTemplate: '<a ng-href="{{row.entity.href}}"><div class="ui-grid-cell-contents" ng-class="col.colIndex()"><span ng-cell-text>{{row.entity[col.field]}}</span></div></a>'},
+    { field: "name", cellClass: 'first', minWidth: 144, enableColumnMenu: false, cellTemplate: '<a ng-href="{{row.entity.href}}"><div class="ui-grid-cell-contents" ng-class="col.colIndex()"><span ng-cell-text>{{row.entity[col.field]}}</span></div></a>'},
     { field: 'cartridge', enableColumnMenu: false},
-    { field: 'flag', enableColumnMenu: false, maxWidth: 48, cellTemplate: '<div class="ui-grid-cell-contents" ng-class="col.colIndex()"><span ng-cell-text><img ng-src="{{row.entity.flag}}"></img></span></div>'},
+    { field: 'origin', enableColumnMenu: false, maxWidth: 56, cellTemplate: '<div class="ui-grid-cell-contents" ng-class="col.colIndex()"><span ng-cell-text><img ng-src="{{row.entity.flag}}"></img></span></div>'},
     { field: 'year', maxWidth: 48, enableColumnMenu: false},
     { field: 'draw' , maxWidth: 48, enableColumnMenu: false},
-    { field: 'melee', displayName: "Melee", maxWidth:72, enableColumnMenu: false},
+    { field: 'melee', displayName: "Melee", maxWidth:56, enableColumnMenu: false},
     { field: 'accuracy', enableColumnMenu: false},
     { field: "damageDice", displayName: "Dice", maxWidth:72, enableColumnMenu: false},
     { field: "damage", enableColumnMenu: false, maxWidth:72},
     { field: 'rateOfFire', displayName: "ROF" , maxWidth: 48, enableColumnMenu: false},
     { field: 'spread', enableColumnMenu: false,maxWidth: 72},
-    { field: 'capacity', maxWidth: 72, enableColumnMenu: false},
+    { field: 'capacity', displayName: "Cap.", maxWidth: 48, enableColumnMenu: false},
     { field: 'weight', enableColumnMenu: false, maxWidth: 72},
   ];
 
@@ -120,16 +120,20 @@ module.exports = function() {
 
   var damage = function(dam) {
     var dice = {
+      2.5 : "d4",
       3.5 : "d6",
       4.5 : "d8",
       5.5 : "d10",
       6.5 : "d12"
     };
-    remainder = [];
-    diceString = [];
+
+    var remainder = [];
+    var diceString = [];
+
     for (var key in dice) {
       remainder.push(dam % key);
-      diceString.push( Math.floor(dam/key) + dice[key] );
+      var number = Math.floor(dam/key);
+      diceString.push( number + dice[key] );
     }
     var diceOut = diceString[remainder.indexOf(Math.min.apply(Math, remainder))];
     var min = parseInt(diceOut.split("d")[0]);
@@ -141,7 +145,7 @@ module.exports = function() {
   var calculate = function(weapon, cartridge, options) {
 
       if (cartridge === undefined) {
-        new Error(weapon.name," cartridge is undefined.");
+        console.log(weapon.name," cartridge is undefined.");
       }
 
       var out = {};
@@ -156,7 +160,7 @@ module.exports = function() {
       }
 
       var base = Math.log(weight + 1) * -3;
-      var max = (Math.pow(weapon.sr, 0.30) * 1.35) + (weight / 5) - 5;
+      var max = (Math.pow(weapon.sr, 0.35)) + (weight / 5) - 5;
       var velocity = weapon.velocity ? weapon.velocity : cartridge.bulletVelocity;
       var recoilEnergy = (weight / 19.6) * (Math.pow(((cartridge.bulletMass * velocity) + (1.5 * cartridge.chargeMass * velocity)) / (weight * 1000),2));
       //var pf = (cartridge.bulletMass * velocity) / ((meplat / cartridge.bulletDiameter) * 1000);
@@ -171,7 +175,7 @@ module.exports = function() {
       out.description = weapon.description;
       out.href = weapon.href;
       out.name = weapon.name;
-      out.draw = Math.max(Math.round(weight + (weapon.length/500)),2);
+      out.draw = Math.max(Math.round(weight + (weapon.length/750)),2);
       out.melee = Math.max(Math.round(out.draw * 0.75),2);
       out.rateOfFire = Math.ceil(weapon.rof / 120);
       out.accuracy = Math.round(base) + "/" + ((max > 0) ? "+" + Math.round(max) : Math.round(max));

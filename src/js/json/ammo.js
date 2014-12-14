@@ -1,12 +1,28 @@
 module.exports = function() {
   return {
-   ".32 ACP" : {
+    ".30 Carbine" : {
+      bulletDiameter:7.82,
+      bulletMass:7,
+      bulletVelocity:606.5,
+      bc: 0.178,
+      chargeMass:0.97,
+      meplat:1.3
+    },
+    ".32 ACP" : {
       bulletDiameter: 7.94,
       bulletMass: 5,
       bulletVelocity: 320,
       chargeMass: 0.13,
       meplat: 3.97,
       bc: 0.117
+    },
+    ".357 SIG" : {
+      chargeMass: 0.45,
+      bulletDiameter:9.02,
+      bulletMass:8.09,
+      bulletVelocity:440,
+      meplat: 5.6,
+      bc: 0.212,
     },
     ".357 Magnum" : {
       bulletDiameter: 9.1,
@@ -15,6 +31,14 @@ module.exports = function() {
       chargeMass: 0.84,
       meplat: 6.0,
       bc: 0.151
+    },
+    ".38 Special" :{
+      bulletDiameter: 9.06,
+      bulletMass: 10,
+      bulletVelocity: 230,
+      chargeMass: 2.0,
+      meplat: 2.032,
+      bc: 0.206
     },
     ".380 ACP" : {
       bulletDiameter: 9.0,

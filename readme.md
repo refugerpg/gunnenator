@@ -24,7 +24,7 @@ Here are most of the gulp commands you'll find helpful when building.
 `gulp js`: bundles, but does not minify, the js. Useful for incremental builds.  
 `gulp serve`: serves the gunnenator. Note that you'll need to serve it before you can use it, because of the limitations of file:///.  
 `gulp json`: compiles the loose js/json mismash files into their respective json files and tosses them over into dist.  
-`gulp dist`: runs partials, json and bundles/uglifies the js 
+`gulp dist`: runs partials, json and bundles/uglifies the js
 
 ## Adding new weapons
 
@@ -50,56 +50,76 @@ A short outline of a conversion file is below:
 
 ```
 module.exports = function() {
-  
+
+  /*
+   * This is where you calculate the inputs from the
+   * weapon and cartridge into game stat outputs.
+   */
+
   var calculate = function(weapon, cartridge, options) {
     var out = {};
-    out.name = weapon.name;
-    out.value = weapon.value;
+    	out.name = weapon.name;
+ 		out.value = cartridge.value;
     ...
+    
     return out;
   };
   
+  /*
+   * These are columns for the ui-grid that serves
+   * as the main navigational tool for the app.
+   */
+   
   var columns = [
     { field: "name" }
     { field: "value" }
     ...
   ];
-  
+
+  /*
+   * And this is where you write an Angular filter to 
+   * format the output for the individual item pages.
+   */
+
   var filter = function() {
     return function(input, options) {
       var dict = {
         "info" : {
-        	"name" : input.name
+            "name" : input.name
           ...
         },
         "section" : {
-        	"name: "Section",
-        	"values" : [
-        		{name: "Value", "value" : input.value}
-        	]
+            "name: "Section",
+            "values" : [
+                {name: "Value", "value" : input.value}
+            ]
         }
       };
       return dict;
     };
   };
-  
+
+  /*
+   * Return the three components of the
+   * file and baby, you got a stew goin'!
+   */
+
   return {
     "calculate": calculate,
     "columns" : columns,
     "filter" : filter
   };
-  
-};
 
+};
 ```
 
 ## Integration with the Gunnenator
 
-Now that you've hypothetically created a conversion file, the time has come to add your new RPG system to the Gunnenator. If I coded it correctly, all you need to do is add one line to main.js, right by where you see `var engines = []` on line 7. Just add your new conversion file there, for instance, `{name: "d20", "engine" : require('./core/d20)}` and bam, you're good to go.
+Now that you've hypothetically created a conversion file, the time has come to add your new RPG system to the Gunnenator. If I coded it correctly, all you need to do is add one line to config.js, right by where you see `var engines = []` on line 6-7ish. Just add your new conversion file there, for instance, `{name: "d20", "engine" : require('./core/d20)}` and bam, you're good to go.
 
 ## Deployment
 
-So, now you have a Gunnenator of your very own. All you have to do to get it into a deployable state is edit the 'baseURL' variable in main.js to the appropriate URL. This will allow the app to appropriately write the ng-hrefs and ng-srcs to their correct targets -- otherwise, the /#/ in the URL will confuse the living daylights out of it / me.
+So, now you have a Gunnenator of your very own. All you have to do to get it into a deployable state is edit the 'baseURL' variable in config.js to the appropriate URL (no trailing slash, if you please), as well as your default engine (index of the array). This will allow the app to appropriately write the ng-hrefs and ng-srcs to their correct targets -- otherwise, the /#/ in the URL will confuse the living daylights out of me, and by extension, the program.
 
 ## Documentation
 
@@ -112,3 +132,10 @@ I'm not really a great programmer, so I invite people to make contributions to a
 Please feel free to contribute additional converters for your / other systems! This would've been like 40% easier if that hadn't been part of the design goals.
 
 As for coding preferences, if JSLint is down, I'm down.
+
+## Credits
+
+This project uses assets from:
+
+* Ashley Hitchcock's [ISO Country Flags Icons](https://github.com/ashhitch/ISO-country-flags-icons)
+* [FontAwesome](https://github.com/FortAwesome/Font-Awesome)

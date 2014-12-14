@@ -21,15 +21,9 @@
   </div>
   <div class="row">
     <div class="col-sm-12">
-      <form class="form-inline">
-        <tabset>
-          <tab ng-repeat="item in weapons" heading="{{item.name}}" ng-click="select($index)" active="item.tabActive"></tab>
-        </tabset>
-      </form>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12">
+      <tabset>
+        <tab ng-repeat="item in weapons" heading="{{item.name}}" ng-click="select($index)" active="item.tabActive"></tab>
+      </tabset>
       <div id="outputGrid" ui-grid="{data : tableData, columnDefs : cdefs}" class="myGrid"></div>
     </div>
   </div>

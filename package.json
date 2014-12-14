@@ -1,11 +1,11 @@
 {
   "name": "gunnenator",
   "main": "index.html",
-  "author": "Noah Lange <noahrlange@gmail.com>",
-  "description": "The gunnenator.",
+  "author": "Noah Lange <refugerpg@gmail.com>",
+  "description": "A framework for converting raw weapon specs into game stats.",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/refugerpg/gunnenator.git"
   },
   "devDependencies": {
     "angular": "1.2.23",
